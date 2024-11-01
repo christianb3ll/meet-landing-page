@@ -1,0 +1,221 @@
+:root {
+    --white: #FAFAFA;
+    --cyan-300: #8FE3F9;
+    --cyan-600: #4D96A9;
+    --cyan-overlay: #4d96a9cc;
+    --purple-300: #D9B8FF;
+    --purple-600: #855fb1;
+    --slate-300: #D1D1DF;
+    --slate-600: #87879D;
+    --slate-900: #28283D;
+}
+
+/* reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+/* fonts */
+/* red-hat-display-500 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/red-hat-display-v19-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+  /* red-hat-display-900 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/red-hat-display-v19-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: var(--white);
+    font-size: 1rem;
+    color: var(--slate-600);
+    line-height: 1.1;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.logo {
+    margin: auto;
+}
+
+section {
+    padding: 4rem 0rem 2rem;
+}
+
+header {
+    padding-top: 3rem;
+}
+
+h1, h2, .subheading {
+    font-weight: 900;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--slate-900);
+}
+
+h2 {
+    font-size: 2rem;;
+    color: var(--slate-900);
+}
+
+.section-heading{
+    margin-bottom: 1.5rem;
+}
+
+footer h2 {
+    color: var(--white);
+}
+
+.subheading {
+    text-transform: uppercase;
+    color: var(--cyan-600);
+    font-size: 0.75rem;
+    letter-spacing: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    font-weight: 900;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 1.813rem;
+    border: 0px;
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    margin: auto;
+}
+
+.button-primary {
+    background-color: var(--cyan-600);
+}
+
+.button-primary .download-version {
+    color: var(--cyan-300);
+}
+
+.button-secondary {
+    background-color: var(--purple-600);
+}
+
+.button-secondary .download-version {
+    color: var(--purple-300);
+}
+
+.hero-content {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 0 2rem;
+}
+
+.hero-sub-image {
+    display: none;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.section-number {
+    position: relative;
+    margin: auto;
+    align-content: center;
+    font-weight: 900;
+    font-size: 1rem;
+    color: var(--slate-600);
+    border-radius: 100%;
+    border: 1px solid var(--slate-300);
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.section-number::before {
+    content: "";
+    position: absolute;
+    background-color: var(--slate-300);
+    width: 1px;
+    height: 5rem;
+    top: -5rem;
+    left: 50%;
+}
+
+.main-content {
+    padding: 4rem 2rem 2rem;
+}
+
+.image-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    margin: 4rem auto;
+}
+
+.user-image {
+    border-radius: 0.5rem;
+}
+
+footer {
+    background-image: url('../images/image-footer-mobile.jpg');
+    background-size: cover;
+    position: relative;
+    margin-top: 5.25rem;
+    color: var(--white);
+    padding-bottom: 4rem;
+}
+
+.overlay {
+    border-image: fill 1 linear-gradient(var(--cyan-overlay), var(--cyan-overlay));
+}
+
+.footer-content {
+    display: grid;
+    gap: 1.5rem;
+    padding: 0 2rem;
+}
+
+footer .section-number {
+    top: -1.25rem;
+    background-color: var(--white);
+}
