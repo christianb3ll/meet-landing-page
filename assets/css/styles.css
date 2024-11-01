@@ -1,13 +1,29 @@
 :root {
+    /* colours */
     --white: #FAFAFA;
     --cyan-300: #8FE3F9;
+    --cyan-hover: #71C0D4;
     --cyan-600: #4D96A9;
     --cyan-overlay: #4d96a9cc;
-    --purple-300: #D9B8FF;
-    --purple-600: #855fb1;
+    --purple-300: #d9b8ff;
+    --purple-hover: #b28cde;
+    --purple-600: #845eb0;
     --slate-300: #D1D1DF;
     --slate-600: #87879D;
     --slate-900: #28283D;
+    /* spacing */
+    --spacing-50: 0.25rem;
+    --spacing-100: 0.5rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-500: 2.5rem;
+    --spacing-600: 3rem;
+    --spacing-700: 3.5rem;
+    --spacing-800: 4rem;
+    --spacing-900: 4.5rem;
+    --spacing-1000: 5rem;
+    --spacing-1400: 7rem;
 }
 
 /* reset */
@@ -77,11 +93,11 @@ body {
 }
 
 section {
-    padding: 4rem 0rem 2rem;
+    padding: var(--spacing-800) 0 var(--spacing-400);
 }
 
 header {
-    padding-top: 3rem;
+    padding-top: var(--spacing-600);
 }
 
 h1, h2, .subheading {
@@ -99,7 +115,7 @@ h2 {
 }
 
 .section-heading{
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-300);
 }
 
 footer h2 {
@@ -111,7 +127,7 @@ footer h2 {
     color: var(--cyan-600);
     font-size: 0.75rem;
     letter-spacing: 0.25rem;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-200);
 }
 
 button {
@@ -121,12 +137,19 @@ button {
     border-radius: 1.813rem;
     border: 0px;
     color: var(--white);
-    padding: 1rem 2.5rem;
-    margin: auto;
+    padding: var(--spacing-200) var(--spacing-500);
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .button-primary {
     background-color: var(--cyan-600);
+}
+
+.button-primary:hover {
+    background-color: var(--cyan-hover);
 }
 
 .button-primary .download-version {
@@ -137,15 +160,23 @@ button {
     background-color: var(--purple-600);
 }
 
+.button-secondary:hover {
+    background-color: var(--purple-hover);
+}
+
 .button-secondary .download-version {
     color: var(--purple-300);
 }
 
 .hero-content {
     display: grid;
-    gap: 1.5rem;
+    gap: var(--spacing-300);
     margin-top: 3rem;
-    padding: 0 2rem;
+    padding: 0 var(--spacing-400);
+}
+
+.hero-main-image {
+    margin: auto;
 }
 
 .hero-sub-image {
@@ -155,7 +186,9 @@ button {
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--spacing-200);
+    margin: auto;
+    justify-content: center;
 }
 
 .section-number {
@@ -181,15 +214,15 @@ button {
     left: 50%;
 }
 
-.main-content {
-    padding: 4rem 2rem 2rem;
+.main-section {
+    padding: var(--spacing-800) var(--spacing-400) var(--spacing-400);
 }
 
 .image-grid {
     display: grid;
-    gap: 1rem;
+    gap: var(--spacing-200);
     grid-template: 1fr 1fr / 1fr 1fr;
-    margin: 4rem auto;
+    margin: var(--spacing-800) auto;
 }
 
 .user-image {
@@ -202,7 +235,7 @@ footer {
     position: relative;
     margin-top: 5.25rem;
     color: var(--white);
-    padding-bottom: 4rem;
+    padding-bottom: var(--spacing-800);
 }
 
 .overlay {
@@ -211,11 +244,79 @@ footer {
 
 .footer-content {
     display: grid;
-    gap: 1.5rem;
-    padding: 0 2rem;
+    gap: var(--spacing-300);
+    padding: 0 var(--spacing-400);
 }
 
 footer .section-number {
     top: -1.25rem;
     background-color: var(--white);
+}
+
+@media (min-width:576px){
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    section {
+        padding: var(--spacing-800) 0 var(--spacing-800);
+    }
+
+    .main-section {
+        padding: var(--spacing-800) 0 var(--spacing-800);
+    }
+
+    .hero-content {
+        margin: var(--spacing-900) auto 0;
+        max-width: 700px;
+    }
+
+   .footer-content, .main-content {
+        margin: auto;
+        max-width: 700px;
+    }
+
+    .image-grid {
+        grid-template: 1fr / repeat(4, 1fr);
+        gap: var(--spacing-300);
+    }
+
+    .subheading {
+        font-size: 0.875rem;
+    }
+
+    footer {
+        background-image: url('../images/image-footer-tablet.jpg');
+    }
+
+}
+
+@media (min-width:1024px){
+    .hero {
+        display: grid;
+        grid-template: 1fr / repeat(3, 1fr) ;
+        align-items: center;
+    }
+    .hero-sub-image {
+        display: block;
+    }
+
+   .footer-content, .image-grid {
+        max-width: 1120px;
+    }
+
+    .footer-content {
+        grid-template: 1fr / repeat(3, 1fr);
+        text-align: left;
+        padding: var(--spacing-1400) 0;
+    }
+
+    footer .button-container {
+        text-align: center;
+    }
+
 }
